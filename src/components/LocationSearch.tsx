@@ -22,18 +22,18 @@ export default function LocationSearch({onLocationClick}: LocationSearchProps) {
 
   const form = useRef<HTMLFormElement | null>(null);
 
-  useEffect(() => {
-    const placeData: Place[] = [
-      {
-        id: 1111,
-        name: 'Yehupitz',
-        longitude: 55,
-        lattitude: 40
-      }
-    ];
-    console.log("set places...");
-    setPlaces(placeData);
-  }, []);
+  // useEffect(() => {
+  //   const placeData: Place[] = [
+  //     {
+  //       id: 1111,
+  //       name: 'Yehupitz',
+  //       longitude: 55,
+  //       lattitude: 40
+  //     }
+  //   ];
+  //   console.log("set places...");
+  //   setPlaces(placeData);
+  // }, []);
 
   const renderPlaces = (places: Place[]): JSX.Element[] => {
     const jsx = places.map(place => {

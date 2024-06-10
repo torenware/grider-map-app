@@ -8,7 +8,12 @@ export default async function search(term: string) {
         '&layer=address&limit=5';
     try {
         console.log('about to fetch ', site);
-        rslt = await fetch(`https://cors-anywhere.herokuapp.com/${site}`);
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        const options = {
+            headers,
+        };
+        rslt = await fetch(site, options);
         const data = await rslt.json();
         console.log(data);
     } catch (e) {
