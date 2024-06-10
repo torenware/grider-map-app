@@ -10,6 +10,7 @@ I'm having a weird problem getting fetch to work with the `nominatim.openstreetm
 
 Tried all kinds of things.  So far:
 
+* If I try my full URL in the browser, it works in Firefox, returning me reasonable JSON.
 * If I use Stephen's zip archive of the project and run it locally, everything works.
 * If I swap in Stephen's version of search.ts, I fail with the same error as I showed above.
 * If I use Stephen's version of package.json and package-lock.json, I get the same error as above.
