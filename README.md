@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Broken Version of Map-App From React 2024 Course
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I'm having a weird problem getting fetch to work with the `nominatim.openstreetmap.org` site.  When I submit the LocationSearch's form, I consistently get the error:
 
-Currently, two official plugins are available:
+> 11:56:07.439
+> XHRGET
+> https://nominatim.openstreetmap.org/search?q=New York&format=geojson&addressdetails=1&layer=address&limit=5
+> 
+> 11:56:07.440 error thrown:  TypeError: NetworkError when attempting to fetch resource. search.ts:15:13
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tried all kinds of things.  So far:
 
-## Expanding the ESLint configuration
+* If I use Stephen's zip archive of the project and run it locally, everything works.
+* If I swap in Stephen's version of search.ts, I fail with the same error as I showed above.
+* If I use Stephen's version of package.json and package-lock.json, I get the same error as above.
+* I've tried using axios instead of fetch; I get the same kind of error, with a huge stack crawl from axios that isn't diagnostic.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+I've diverged from the exact project (I tend to try things myself before I watch a video, but I don't see why I get the "TypeError: NetworkError"
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Any ideas as to how to debug this, much welcome.
